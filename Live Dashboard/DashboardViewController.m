@@ -26,4 +26,29 @@
     // Dispose of any resources that can be recreated.
 }
 
+@synthesize valoreData = _valoreData;
+
+- (IBAction)dataSelezionata:(UIDatePicker *)sender {
+    NSDate *datethathasbeenselected = [sender date];
+    
+    NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
+    [dateFormatter setTimeStyle:NSDateFormatterNoStyle];
+    [dateFormatter setDateStyle:NSDateFormatterMediumStyle];
+    
+    
+    NSLocale *itLocale = [[NSLocale alloc] initWithLocaleIdentifier:@"it_IT"];
+    [dateFormatter setLocale:itLocale];
+    
+    /**
+    NSLog(@"Date for locale %@: %@",
+          [[dateFormatter locale] localeIdentifier], [dateFormatter stringFromDate:datethathasbeenselected]);
+    **/
+    
+    self.valoreData.text = [dateFormatter stringFromDate:datethathasbeenselected];
+    
+
+}
+
+
+
 @end

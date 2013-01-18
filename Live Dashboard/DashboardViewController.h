@@ -10,4 +10,12 @@
 
 @interface DashboardViewController : UIViewController
 
+@property (weak, nonatomic) IBOutlet UILabel *valoreData;
+
+
+@property (weak, nonatomic) IBOutlet UIDatePicker *dataDesiderata;
+
+
+
+
 @end
