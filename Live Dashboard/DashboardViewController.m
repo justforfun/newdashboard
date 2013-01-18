@@ -42,7 +42,8 @@
     /**
     NSLog(@"Date for locale %@: %@",
           [[dateFormatter locale] localeIdentifier], [dateFormatter stringFromDate:datethathasbeenselected]);
-    **/
+    
+     **/
     
     self.valoreData.text = [dateFormatter stringFromDate:datethathasbeenselected];
     
