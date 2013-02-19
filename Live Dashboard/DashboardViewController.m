@@ -17,6 +17,8 @@
 @synthesize valoreData = _valoreData;
 @synthesize startDate = _startDate;
 @synthesize dataDesiderata = _dataDesiderata;
+@synthesize dataInizio = _dataInizio;
+@synthesize dataFine = _dataFine;
 
 - (void)viewDidLoad
 {
