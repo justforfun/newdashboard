@@ -9,6 +9,16 @@
 #import "DashboardViewController.h"
 
 @interface DashboardViewController ()
+/***
+ *  Proprietà necessarie per impostare l'intervallo di date per cui è richeista la generazione del garfico
+ ***/
+@property (nonatomic) NSDate *dataInizio;
+@property (nonatomic) NSDate *dataFine;
+
+/***
+ *  viene memorizzato l'ultimo bottone di selezione data (inizio o fine)che è stato toccato dall'utente
+ ***/
+@property (nonatomic) UIButton * lastSender;
 
 @end
 
@@ -17,6 +27,7 @@
 @synthesize valoreData = _valoreData;
 @synthesize startDate = _startDate;
 @synthesize dataDesiderata = _dataDesiderata;
+@synthesize lastSender = _lastSender;
 @synthesize dataInizio = _dataInizio;
 @synthesize dataFine = _dataFine;
 
@@ -31,9 +42,27 @@
     [super didReceiveMemoryWarning];
     // Dispose of any resources that can be recreated.
 }
-- (IBAction)startDateTouched:(id)sender {
+- (void) setDataDesiderata:(UIDatePicker *)dataDesiderata
+{
+    _dataDesiderata = dataDesiderata;
     
+/***
+ Occorre disabilitare il Date Picker sino a quando non viene toccato uno dei bottoni di selezione della data di inizio o fine
+[self.dataDesiderata setDate:[NSDate date]];
+[self.dataDesiderata setEnabled:NO];
+
+***/
 }
+
+
+- (IBAction)startDateTouched:(id)sender {
+/***
+ Viene riabilitato il Date Picker
+    [self.dataDesiderata setDate:[NSDate date]];
+ [self.dataDesiderata setEnabled:YES];
+
+ ***/
+        }
 
 
 - (IBAction)dataSelezionata:(UIDatePicker *)sender {

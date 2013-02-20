@@ -17,7 +17,5 @@
 
 
 @property (weak, nonatomic) IBOutlet UIButton *startDate;
-@property (nonatomic) NSDate *dataInizio;
-@property (nonatomic) NSDate *dataFine;
 
 @end
