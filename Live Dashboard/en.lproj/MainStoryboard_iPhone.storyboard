@@ -66,22 +66,40 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="startDateTouched:" destination="2" eventType="touchUpInside" id="Uye-X1-7JE"/>
+                                    <action selector="buttonDateTouched:" destination="2" eventType="touchUpInside" id="ka7-b1-AJg"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="wordWrap" translatesAutoresizingMaskIntoConstraints="NO" id="Luk-EP-a17">
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="15"/>
+                                <inset key="contentEdgeInsets" minX="9" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                <state key="normal" title="Fine">
+                                    <color key="titleColor" red="0.19607843459999999" green="0.30980393290000002" blue="0.52156865600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <state key="highlighted">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="buttonDateTouched:" destination="2" eventType="touchUpInside" id="hme-Zb-fkP"/>
                                 </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="bottom" secondItem="j46-VO-5HK" secondAttribute="bottom" constant="113" id="3NU-hd-cQC"/>
                             <constraint firstItem="UTv-0p-qlm" firstAttribute="centerX" secondItem="3" secondAttribute="centerX" type="default" id="8ye-J2-pLt"/>
+                            <constraint firstAttribute="bottom" secondItem="Luk-EP-a17" secondAttribute="bottom" constant="48" id="EBA-q4-Dda"/>
                             <constraint firstItem="j46-VO-5HK" firstAttribute="leading" secondItem="42c-ce-Nsk" secondAttribute="leading" type="default" id="FWW-ll-Zl7"/>
+                            <constraint firstAttribute="bottom" secondItem="j46-VO-5HK" secondAttribute="bottom" constant="109" id="GK4-HR-Oew"/>
                             <constraint firstItem="42c-ce-Nsk" firstAttribute="top" secondItem="3" secondAttribute="top" constant="250" id="QVH-Ta-gA3"/>
                             <constraint firstAttribute="trailing" secondItem="j46-VO-5HK" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="Wsk-wZ-gqY"/>
+                            <constraint firstItem="Luk-EP-a17" firstAttribute="leading" secondItem="j46-VO-5HK" secondAttribute="leading" type="default" id="mzg-LF-vym"/>
                             <constraint firstItem="UTv-0p-qlm" firstAttribute="top" secondItem="3" secondAttribute="top" type="default" id="tEQ-sR-fQ9"/>
+                            <constraint firstAttribute="trailing" secondItem="Luk-EP-a17" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="weK-1p-t5B"/>
                         </constraints>
                     </view>
                     <connections>
                         <outlet property="dataDesiderata" destination="UTv-0p-qlm" id="zJI-sm-mkD"/>
+                        <outlet property="endDate" destination="Luk-EP-a17" id="EKm-C7-7XN"/>
                         <outlet property="startDate" destination="j46-VO-5HK" id="KOY-1M-kNu"/>
                         <outlet property="valoreData" destination="42c-ce-Nsk" id="BIS-nr-8Me"/>
                     </connections>
@@ -94,9 +112,10 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
         <class className="DashboardViewController" superclassName="UIViewController">
             <source key="sourceIdentifier" type="project" relativePath="./Classes/DashboardViewController.h"/>
             <relationships>
+                <relationship kind="action" name="buttonDateTouched:"/>
                 <relationship kind="action" name="dataSelezionata:" candidateClass="UIDatePicker"/>
-                <relationship kind="action" name="startDateTouched:"/>
                 <relationship kind="outlet" name="dataDesiderata" candidateClass="UIDatePicker"/>
+                <relationship kind="outlet" name="endDate" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="startDate" candidateClass="UIButton"/>
                 <relationship kind="outlet" name="valoreData" candidateClass="UILabel"/>
             </relationships>

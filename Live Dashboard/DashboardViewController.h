@@ -18,4 +18,6 @@
 
 @property (weak, nonatomic) IBOutlet UIButton *startDate;
 
+@property (weak, nonatomic) IBOutlet UIButton *endDate;
+
 @end

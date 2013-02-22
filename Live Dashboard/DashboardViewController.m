@@ -18,7 +18,7 @@
 /***
  *  viene memorizzato l'ultimo bottone di selezione data (inizio o fine)che è stato toccato dall'utente
  ***/
-@property (nonatomic) UIButton * lastSender;
+@property (nonatomic) int lastSenderId;
 
 @end
 
@@ -27,9 +27,12 @@
 @synthesize valoreData = _valoreData;
 @synthesize startDate = _startDate;
 @synthesize dataDesiderata = _dataDesiderata;
-@synthesize lastSender = _lastSender;
+@synthesize lastSenderId = _lastSenderId;
 @synthesize dataInizio = _dataInizio;
 @synthesize dataFine = _dataFine;
+
+#define START_DATE_BUTTON_ID 0
+#define END_DATE_BUTTON_ID 1
 
 - (void)viewDidLoad
 {
@@ -49,29 +52,49 @@
 /***
  Occorre disabilitare il Date Picker sino a quando non viene toccato uno dei bottoni di selezione della data di inizio o fine
 [self.dataDesiderata setDate:[NSDate date]];
-[self.dataDesiderata setEnabled:NO];
-
 ***/
+ [self.dataDesiderata setEnabled:NO];
+
+
 }
 
+- (IBAction)buttonDateTouched:(id)sender {
+    /***
+     Viene riabilitato il Date Picker
+     [self.dataDesiderata setDate:[NSDate date]];
+     
+     ***/
+    [self.dataDesiderata setEnabled:YES];
+     self.lastSenderId = [sender tag];
+     NSLog(@"Last Sender: %i",self.lastSenderId);
 
-- (IBAction)startDateTouched:(id)sender {
+}
+
 /***
+- (IBAction)startDateTouched:(id)sender {
+
  Viene riabilitato il Date Picker
     [self.dataDesiderata setDate:[NSDate date]];
  [self.dataDesiderata setEnabled:YES];
 
- ***/
-        }
 
+    
+    self.lastSenderId = [sender tag];
+    NSLog(@"Last Sender: %i",
+          self.lastSenderId);
+    
+    
+        }
+  ***/
 
 - (IBAction)dataSelezionata:(UIDatePicker *)sender {
     NSDate *datethathasbeenselected = [sender date];
+
     
     NSDateFormatter *dateFormatter = [[NSDateFormatter alloc] init];
     [dateFormatter setTimeStyle:NSDateFormatterNoStyle];
     [dateFormatter setDateStyle:NSDateFormatterMediumStyle];
-    
+   
     
     NSLocale *itLocale = [[NSLocale alloc] initWithLocaleIdentifier:@"it_IT"];
     [dateFormatter setLocale:itLocale];
@@ -83,20 +106,25 @@
      ***/
 
     NSString * strAppoggio = [dateFormatter stringFromDate:datethathasbeenselected];
-    
     NSString *strInizio = @"Inizio:";
     NSString *strTitoloBottone = [strInizio stringByAppendingString:strAppoggio];
-
-    
     self.valoreData.text = [dateFormatter stringFromDate:datethathasbeenselected];
   
-
-    self.startDate.titleLabel.text = @"Inizio %@", [dateFormatter stringFromDate:datethathasbeenselected];
-    [self.startDate setTitle:strTitoloBottone forState:UIControlStateNormal];
-  
-//    self.startDate.titleLabel.text = @"Pippo";
+    NSLog(@"Data %@", [dateFormatter stringFromDate:datethathasbeenselected]);
     
-    NSLog(@"Inizio %@", [dateFormatter stringFromDate:datethathasbeenselected]);
+    if (self.lastSenderId == START_DATE_BUTTON_ID) {
+        self.dataInizio = datethathasbeenselected;
+        self.startDate.titleLabel.text = @"Inizio %@", [dateFormatter stringFromDate:datethathasbeenselected];
+        [self.startDate setTitle:strTitoloBottone forState:UIControlStateNormal];
+
+    }
+    else if(self.lastSenderId == END_DATE_BUTTON_ID) {
+        self.dataFine = datethathasbeenselected;
+        self.endDate.titleLabel.text = @"Fine %@", [dateFormatter stringFromDate:datethathasbeenselected];
+        [self.endDate setTitle:strTitoloBottone forState:UIControlStateNormal];
+
+    }
+
 
 }
 
