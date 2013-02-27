@@ -87,6 +87,7 @@
         }
   ***/
 
+
 - (IBAction)dataSelezionata:(UIDatePicker *)sender {
     NSDate *datethathasbeenselected = [sender date];
 
@@ -106,25 +107,37 @@
      ***/
 
     NSString * strAppoggio = [dateFormatter stringFromDate:datethathasbeenselected];
-    NSString *strInizio = @"Inizio:";
-    NSString *strTitoloBottone = [strInizio stringByAppendingString:strAppoggio];
-    self.valoreData.text = [dateFormatter stringFromDate:datethathasbeenselected];
+
+    self.valoreData.text = strAppoggio;
   
     NSLog(@"Data %@", [dateFormatter stringFromDate:datethathasbeenselected]);
     
+    /***
+     *  Stampo nel bottone la data selezionata e imposto il valore
+     *  della data minima o massima deldate picker per evitare che la data 
+     *  di inizio sia più grande di quella di fine o che quella di fine sia 
+     *  più piccola di quella di inizio
+     ***/
     if (self.lastSenderId == START_DATE_BUTTON_ID) {
         self.dataInizio = datethathasbeenselected;
-        self.startDate.titleLabel.text = @"Inizio %@", [dateFormatter stringFromDate:datethathasbeenselected];
+        NSString *strInizio = @"Inizio:";
+        NSString *strTitoloBottone = [strInizio stringByAppendingString:strAppoggio];
         [self.startDate setTitle:strTitoloBottone forState:UIControlStateNormal];
+        // [self.startDate setEnabled:NO];
+        [sender setMinimumDate:datethathasbeenselected];
 
     }
     else if(self.lastSenderId == END_DATE_BUTTON_ID) {
         self.dataFine = datethathasbeenselected;
-        self.endDate.titleLabel.text = @"Fine %@", [dateFormatter stringFromDate:datethathasbeenselected];
+        NSString *strInizio = @"Fine:";
+        NSString *strTitoloBottone = [strInizio stringByAppendingString:strAppoggio];
         [self.endDate setTitle:strTitoloBottone forState:UIControlStateNormal];
+        // [self.endDate setEnabled:NO];
+        [sender setMaximumDate:datethathasbeenselected];
 
     }
 
+    
 
 }
 
