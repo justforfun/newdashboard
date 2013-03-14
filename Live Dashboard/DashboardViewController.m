@@ -30,6 +30,7 @@
 @synthesize lastSenderId = _lastSenderId;
 @synthesize dataInizio = _dataInizio;
 @synthesize dataFine = _dataFine;
+@synthesize graphIt = _graphIt;
 
 #define START_DATE_BUTTON_ID 0
 #define END_DATE_BUTTON_ID 1
@@ -70,22 +71,6 @@
 
 }
 
-/***
-- (IBAction)startDateTouched:(id)sender {
-
- Viene riabilitato il Date Picker
-    [self.dataDesiderata setDate:[NSDate date]];
- [self.dataDesiderata setEnabled:YES];
-
-
-    
-    self.lastSenderId = [sender tag];
-    NSLog(@"Last Sender: %i",
-          self.lastSenderId);
-    
-    
-        }
-  ***/
 
 
 - (IBAction)dataSelezionata:(UIDatePicker *)sender {
@@ -137,6 +122,7 @@
         // [self.endDate setEnabled:NO];
         [sender setMaximumDate:datethathasbeenselected];
         self.valoreData.text = [self.valoreData.text stringByAppendingString:strTitoloBottone];
+        [self.graphIt setEnabled:YES];
 
     }
 
@@ -144,6 +130,9 @@
 
 }
 
+- (IBAction)graphItAction:(UIButton *)sender {
+    
+}
 
 
 @end

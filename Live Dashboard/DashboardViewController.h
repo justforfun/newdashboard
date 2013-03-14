@@ -19,5 +19,6 @@
 @property (weak, nonatomic) IBOutlet UIButton *startDate;
 
 @property (weak, nonatomic) IBOutlet UIButton *endDate;
+@property (weak, nonatomic) IBOutlet UIButton *graphIt;
 
 @end
