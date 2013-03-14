@@ -12,9 +12,9 @@
                         <rect key="frame" x="0.0" y="20" width="320" height="548"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Data" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="42c-ce-Nsk">
+                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" text="Data" lineBreakMode="wordWrap" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" preferredMaxLayoutWidth="290" translatesAutoresizingMaskIntoConstraints="NO" id="42c-ce-Nsk">
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="122" id="gre-8J-S8G"/>
+                                    <constraint firstAttribute="width" constant="290" id="XLD-Jn-ESv"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -87,14 +87,14 @@ AQABAAEAAQAB//+dkAEA//+PgAAE//+dkAEI//+dkAEMUERUAFBTVABQV1QAUFBUAAAAAAEAAAABA
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="j46-VO-5HK" firstAttribute="top" secondItem="3" secondAttribute="top" constant="12" id="1qJ-yb-ucS"/>
-                            <constraint firstItem="Luk-EP-a17" firstAttribute="leading" secondItem="42c-ce-Nsk" secondAttribute="leading" type="default" id="2Hj-pG-mzB"/>
+                            <constraint firstItem="Luk-EP-a17" firstAttribute="leading" secondItem="j46-VO-5HK" secondAttribute="leading" type="default" id="6Qf-2M-in8"/>
+                            <constraint firstAttribute="trailing" secondItem="42c-ce-Nsk" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="CcW-cM-rfV"/>
+                            <constraint firstItem="j46-VO-5HK" firstAttribute="centerX" secondItem="3" secondAttribute="centerX" type="default" id="NX8-3E-RBA"/>
                             <constraint firstItem="Luk-EP-a17" firstAttribute="top" secondItem="j46-VO-5HK" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="QNP-K8-mJ6"/>
-                            <constraint firstAttribute="trailing" secondItem="j46-VO-5HK" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="Wsk-wZ-gqY"/>
-                            <constraint firstItem="UTv-0p-qlm" firstAttribute="centerX" secondItem="3" secondAttribute="centerX" type="default" id="jvS-mM-aqB"/>
-                            <constraint firstItem="Luk-EP-a17" firstAttribute="leading" secondItem="j46-VO-5HK" secondAttribute="leading" type="default" id="mzg-LF-vym"/>
+                            <constraint firstItem="Luk-EP-a17" firstAttribute="centerX" secondItem="UTv-0p-qlm" secondAttribute="centerX" type="default" id="bi5-Gy-kQ8"/>
+                            <constraint firstItem="j46-VO-5HK" firstAttribute="trailing" secondItem="Luk-EP-a17" secondAttribute="trailing" type="default" id="h8c-U1-R3d"/>
                             <constraint firstItem="UTv-0p-qlm" firstAttribute="top" secondItem="3" secondAttribute="top" constant="134" id="sXh-Zx-ube"/>
                             <constraint firstItem="42c-ce-Nsk" firstAttribute="top" secondItem="UTv-0p-qlm" secondAttribute="bottom" constant="8" symbolic="YES" type="default" id="uFT-Do-1NZ"/>
-                            <constraint firstAttribute="trailing" secondItem="Luk-EP-a17" secondAttribute="trailing" constant="20" symbolic="YES" type="default" id="weK-1p-t5B"/>
                         </constraints>
                     </view>
                     <connections>

@@ -108,7 +108,7 @@
 
     NSString * strAppoggio = [dateFormatter stringFromDate:datethathasbeenselected];
 
-    self.valoreData.text = strAppoggio;
+    // self.valoreData.text = strAppoggio;
   
     NSLog(@"Data %@", [dateFormatter stringFromDate:datethathasbeenselected]);
     
@@ -119,21 +119,24 @@
      *  più piccola di quella di inizio
      ***/
     if (self.lastSenderId == START_DATE_BUTTON_ID) {
+        // imposto la data di inizio
         self.dataInizio = datethathasbeenselected;
         NSString *strInizio = @"Inizio:";
         NSString *strTitoloBottone = [strInizio stringByAppendingString:strAppoggio];
         [self.startDate setTitle:strTitoloBottone forState:UIControlStateNormal];
         // [self.startDate setEnabled:NO];
         [sender setMinimumDate:datethathasbeenselected];
-
+        self.valoreData.text = strTitoloBottone;
     }
     else if(self.lastSenderId == END_DATE_BUTTON_ID) {
+        // imposto la data di fine
         self.dataFine = datethathasbeenselected;
-        NSString *strInizio = @"Fine:";
+        NSString *strInizio = @" Fine:";
         NSString *strTitoloBottone = [strInizio stringByAppendingString:strAppoggio];
         [self.endDate setTitle:strTitoloBottone forState:UIControlStateNormal];
         // [self.endDate setEnabled:NO];
         [sender setMaximumDate:datethathasbeenselected];
+        self.valoreData.text = [self.valoreData.text stringByAppendingString:strTitoloBottone];
 
     }
 
