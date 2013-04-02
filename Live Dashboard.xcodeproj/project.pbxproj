@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		361B003E170ACCBA00B30135 /* DashboardGraphViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 361B003D170ACCBA00B30135 /* DashboardGraphViewController.m */; };
 		F91755CF16A9E98A00D1CD32 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F91755CE16A9E98A00D1CD32 /* UIKit.framework */; };
 		F91755D116A9E98A00D1CD32 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F91755D016A9E98A00D1CD32 /* Foundation.framework */; };
 		F91755D316A9E98A00D1CD32 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F91755D216A9E98A00D1CD32 /* CoreGraphics.framework */; };
@@ -37,6 +38,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		361B003C170ACCBA00B30135 /* DashboardGraphViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DashboardGraphViewController.h; sourceTree = "<group>"; };
+		361B003D170ACCBA00B30135 /* DashboardGraphViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DashboardGraphViewController.m; sourceTree = "<group>"; };
 		F91755CA16A9E98A00D1CD32 /* Live Dashboard.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Live Dashboard.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		F91755CE16A9E98A00D1CD32 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		F91755D016A9E98A00D1CD32 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -119,6 +122,8 @@
 		F91755D416A9E98A00D1CD32 /* Live Dashboard */ = {
 			isa = PBXGroup;
 			children = (
+				361B003C170ACCBA00B30135 /* DashboardGraphViewController.h */,
+				361B003D170ACCBA00B30135 /* DashboardGraphViewController.m */,
 				F91755DD16A9E98A00D1CD32 /* DashboardAppDelegate.h */,
 				F91755DE16A9E98A00D1CD32 /* DashboardAppDelegate.m */,
 				F91755E616A9E98A00D1CD32 /* MainStoryboard_iPhone.storyboard */,
@@ -278,6 +283,7 @@
 				F91755DB16A9E98A00D1CD32 /* main.m in Sources */,
 				F91755DF16A9E98A00D1CD32 /* DashboardAppDelegate.m in Sources */,
 				F91755EE16A9E98A00D1CD32 /* DashboardViewController.m in Sources */,
+				361B003E170ACCBA00B30135 /* DashboardGraphViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -462,6 +468,7 @@
 				F917560816A9E98B00D1CD32 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		F917560916A9E98B00D1CD32 /* Build configuration list for PBXNativeTarget "Live DashboardTests" */ = {
 			isa = XCConfigurationList;
@@ -470,6 +477,7 @@
 				F917560B16A9E98B00D1CD32 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

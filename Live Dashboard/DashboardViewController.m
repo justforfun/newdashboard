@@ -7,6 +7,7 @@
 //
 
 #import "DashboardViewController.h"
+#import "DashboardGraphViewController.h"
 
 @interface DashboardViewController ()
 /***
@@ -39,6 +40,7 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    self.navigationController.title = @"Dashboard";
 }
 
 - (void)didReceiveMemoryWarning
@@ -131,8 +133,51 @@
 }
 
 - (IBAction)graphItAction:(UIButton *)sender {
+    // [self performSegueWithIdentifier:@"segue graph it" sender:sender];
     
 }
+
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"segue graph it"]) {
+        
+        // Get destination view
+        DashboardGraphViewController *vc = segue.destinationViewController;
+        
+        
+        // Pass the information to your destination view
+        [vc setDataInizio:self.dataInizio];
+        [vc setDataFine:self.dataFine];
+        
+    }
+}
+
+
+
+/***
+ // When any of my buttons are pressed, push the next view
+ - (IBAction)buttonPressed:(id)sender
+ {
+ [self performSegueWithIdentifier:@"segue graph it" sender:sender];
+ }
+ 
+ // This will get called too before the view appears
+ - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+ {
+ if ([[segue identifier] isEqualToString:@"segue graph it"]) {
+ 
+ // Get destination view
+ SecondView *vc = [segue destinationViewController];
+ 
+ // Get button tag number (or do whatever you need to do here, based on your object
+ NSInteger tagIndex = [(UIButton *)sender tag];
+ 
+ // Pass the information to your destination view
+ [vc setSelectedButton:tagIndex];
+ }
+ }
+ ***/
 
 
 @end
